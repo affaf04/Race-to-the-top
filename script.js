@@ -86,16 +86,7 @@ function rollDice() {
       diceImage.src = "resources/dice6.png";
       
     }
-    
 
-  //   if (round >= 3) {
-  //     compareWinners();
-  //     rollDiceButton.disabled = true;
-  //   } else {
-  //     changeRound();
-  //     switchPlayer();
-  //   }
-  // }
   }
 }
 

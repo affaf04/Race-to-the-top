@@ -17,7 +17,7 @@ class Player {
 
   movePlayer(steps) {
     this.position += steps;
-    this.player.style.bottom = this.position * 60 + "px";
+    this.player.style.bottom = this.position * 50 + "px";
 
     if (this.position === 9) {
       this.wins++; 
@@ -28,6 +28,7 @@ class Player {
       alert(this.player.id + " loses the round");
       this.player.style.bottom = "0px";
       changeRound();
+      return;
     }
 
     if (round === 3) {

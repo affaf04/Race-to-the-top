@@ -1,23 +1,99 @@
-.gameboard{
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
+* {
+    margin: 20px;
+    margin-left: 100px;
+}
+h1{
+    font-family: monospace;
+    font-size: 25px;
+    color: forestgreen;
+    text-align: center;
+}
+
+.gameboard {
     margin: 0;
-    width: 800px;
+    width: 900px;
     height: 800px;
     position: relative;
-    border: solid rgb(63, 180, 172);
-    background-color: rgb(188, 249, 246);
+    border: solid rgb(180, 92, 63);
+    background-color: rgb(253, 242, 232);
+    background-image: url(805542910.jpg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-.player{
- background-size: cover;
- position: absolute;
+#stairs {
+    width: 500px; 
+    height: 700px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0; 
+    background-image: url(Untitled_design__9_-removebg-preview-removebg-preview.png); 
+    background-size: 600px;
+    background-repeat: no-repeat;
+    z-index: 1;
 }
 
-#player1{
-    background-image: url();
+.player {
+    background-size: cover;
+    position: absolute;
+    height: 85px;
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+    z-index:2;
 }
-#player2{
-    background-image: url();
+
+#player1 {
+    background-image: url(Sanrio_Characters_Keroppi_Image010-removebg-preview.png);
+    bottom: 0px; 
+
+    right: 180px;
+    margin-right: 40px; 
+    
+}
+
+#player2 {
+    background-image: url(41i376zBp9L-removebg-preview.png);
+    bottom: 0px; 
+    right: 100px;
+    
+}
+
+#diceImage {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 250px;
+    bottom: 50px;
+    left: 20px;
+
+}
+
+.roll, .restart {
+    height: 50px;
+    width: 160px;
+    font-size: 21px;
+    text-align: center;
+    border: solid red;
+    font-family: monospace;
+    border-radius: 30%;
+    display: inline;
+    margin-left: 20px;
+}
+
+.info, .dice-info, .round-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: brown;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family: monospace;
+    font-size: 15px;
+    
 }

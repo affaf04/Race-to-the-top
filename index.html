@@ -3,16 +3,21 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ladder game</title>
+        <title>race to top game</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="gameboard">
+            <h1> Race To Top </h1>
+            <div class="info">Game Info: Round 1, Player 1's Turn</div>
+            <div class="round-info">Round: 1</div>
+            <div class="dice-info">Dice Rolled: </div>
             <div class="player" id="player1"></div>
             <div class="player" id="player2"></div>
             <div class="ladder">
+                <div id="stairs"> </div>
                 <div class="step" id="step1"></div>
                 <div class="step" id="step2"></div>
                 <div class="step" id="step3"></div>
@@ -23,15 +28,11 @@
                 <div class="step" id="step8"></div>
                 <div class="step" id="step9"></div>
                </div>
-                <div id="diceImage">
-                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Dice-1.svg/480px-Dice-1.svg.png" alt="dice">
-                </div>
+               <img src="resources/dice1.png" alt="Dice 1" id="diceImage">
 
                <button class="roll">Roll The Dice</button>
                <button class="restart">Restart Game</button>
-               <div class="info">Game Info: Round 1, Player 1's Turn</div>
-               <div class="round-info">Round 1</div>
-               <div class="dice-info">Dice Rolled: </div>
+               
                <div class="console-logs"></div>
         </div>
         

@@ -17,17 +17,20 @@ class Player {
 
   movePlayer(steps) {
     this.position += steps;
-    this.player.style.bottom = this.position * 50 + "px";
+    this.player.style.bottom = this.position * 70 + "px";
 
     if (this.position === 9) {
       this.wins++; 
       alert(this.player.id + " wins the round");
       this.player.style.bottom = '0px';
       changeRound();
+      updateRoundInfo();
+       return;
     } else if (this.position > 9) {
       alert(this.player.id + " loses the round");
       this.player.style.bottom = "0px";
       changeRound();
+      updateRoundInfo();
       return;
     }
 

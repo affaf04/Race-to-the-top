@@ -14,40 +14,31 @@ class Player {
     this.startingPosition = position;
     this.wins = 0;
   }
-
   movePlayer(steps) {
     this.position += steps;
-    this.player.style.bottom = this.position * 60 + "px";
-
+    this.player.style.bottom = this.position * 68 + "px";
+  
     if (this.position >= 9) {
-      this.position = this.startingPosition;
-      this.player.style.bottom = "0px";
-
-      if (this === player1) {
-        alert("Player 1 loses the round");
-      } else if (this === player2) {
-        alert("Player 2 loses the round");
-      } 
-      changeRound();
-      updateRoundInfo();
-    }
-    if (this.position === 9) {
+      this.position = 9; 
       if (this === player1) {
         alert("Player 1 wins the round");
         player1Win++;
-        changeRound();
-        updateRoundInfo();
       } else if (this === player2) {
         alert("Player 2 wins the round");
         player2Win++;
-        changeRound();
-        updateRoundInfo();
       }
-
-      // changeRound();
-      // updateRoundInfo();
+      player1.player.style.bottom = "0px";
+      player2.player.style.bottom = "0px";      
+      changeRound();
+      updateRoundInfo();
+    } else if (this.position > 9) {
+      this.position = 9;
+      alert(this.player.id + " loses the round");
+      this.player.style.bottom="0px";
+      changeRound();
+      updateRoundInfo();
     }
-
+  
     if (player1Win >= 2) {
       alert("Player 1 wins the game");
     } else if (player2Win >= 2) {
@@ -58,8 +49,7 @@ class Player {
       switchPlayer();
     }
   }
-}
-
+}  
 const player1 = new Player(p1, 0);
 const player2 = new Player(p2, 0);
 let startingPosition = 0;
@@ -110,11 +100,20 @@ function switchPlayer() {
 }
 
 function changeRound() {
-  round++;
-  console.log("Round changed to", round);
-  updateRoundInfo();
-
+  if (round >= 3) {
+    compareWinners();
+    rollDiceButton.disabled = true;
+  } else {
+    round++;
+    currentPlayer = player1; 
+    player1.position = 0;
+    player2.position = 0;
+    player1.player.style.bottom = "0px";
+    player2.player.style.bottom = "0px";
+    updateRoundInfo();
+  }
 }
+
 
 function updateRoundInfo() {
   roundInfo.textContent = "Round: " + round;
@@ -145,4 +144,6 @@ function startAgain() {
   round = 1;
   currentPlayer = player1;
   updateRoundInfo();
+  rollDiceButton.disabled = false;
+
 }

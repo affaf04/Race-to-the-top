@@ -18,7 +18,7 @@ class Player {
   }
   movePlayer(steps) {
     this.position += steps;
-    this.player.style.bottom = this.position * 66 + "px";
+    this.player.style.bottom = this.position * 69 + "px";
   
     if (this.position >= 9) {
       this.position = 9;

@@ -30,7 +30,7 @@ h1{
     top: o;
     right: 0;
     bottom: 0; 
-    background-image: url(https://o.remove.bg/downloads/fbc9c09f-3346-4b9c-b165-6ad4bd63cc3e/Untitled_design__13_-removebg-preview.png); 
+    background-image: url(Untitled_design__13_-removebg-preview.png); 
     background-size: 600px;
     background-repeat: no-repeat;
     z-index: 1;
@@ -97,3 +97,16 @@ h1{
     font-size: 15px;
     
 }
+
+  #celebration-effect {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://media2.giphy.com/media/l1J9EQhfkb8tPu836/giphy.gif');
+    background-size: cover;
+    position: absolute;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  

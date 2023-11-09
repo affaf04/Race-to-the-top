@@ -6,6 +6,8 @@ const rollDiceButton = document.querySelector(".roll");
 const restartButton = document.querySelector(".restart");
 const info = document.querySelector(".info");
 const roundInfo = document.querySelector(".round-info");
+const effect = document.getElementById('celebration-effect');
+
 
 class Player {
   constructor(player, position) {
@@ -16,45 +18,47 @@ class Player {
   }
   movePlayer(steps) {
     this.position += steps;
-    this.player.style.bottom = this.position * 68 + "px";
+    this.player.style.bottom = this.position * 66 + "px";
   
     if (this.position >= 9) {
-      this.position = 9; 
+      this.position = 9;
       if (this === player1) {
         alert("Player 1 wins the round");
-        player1Win++;
+        player1.wins++;
       } else if (this === player2) {
         alert("Player 2 wins the round");
-        player2Win++;
+        player2.wins++;
       }
       player1.player.style.bottom = "0px";
-      player2.player.style.bottom = "0px";      
-      changeRound();
+      player2.player.style.bottom = "0px";
       updateRoundInfo();
+      changeRound();
+      
     } else if (this.position > 9) {
-      this.position = 9;
-      alert(this.player.id + " loses the round");
-      this.player.style.bottom="0px";
+
+      if (this === player1) {
+        alert("Player 1 loses the round");
+        player1.player.style.bottom = "0px";
+      } else if (this === player2) {
+        alert("Player 2 loses the round");
+        player2.player.style.bottom = "0px";
+      }
       changeRound();
       updateRoundInfo();
     }
+    switchPlayer();
+
   
-    if (player1Win >= 2) {
-      alert("Player 1 wins the game");
-    } else if (player2Win >= 2) {
-      alert("Player 2 wins the game");
-    } else if (round === 3) {
-      compareWinners();
-    } else {
-      switchPlayer();
-    }
   }
-}  
+}
+
+
+
 const player1 = new Player(p1, 0);
 const player2 = new Player(p2, 0);
 let startingPosition = 0;
-let player1Win = 0;
-let player2Win = 0;
+// let player1Win = 0;
+// let player2Win = 0;
 let round = 1;
 let currentPlayer = player1;
 
@@ -84,10 +88,14 @@ function rollDice() {
     }
     
 
-    if (round >= 3) {
-      compareWinners();
-      rollDiceButton.disabled = true;
-    }
+  //   if (round >= 3) {
+  //     compareWinners();
+  //     rollDiceButton.disabled = true;
+  //   } else {
+  //     changeRound();
+  //     switchPlayer();
+  //   }
+  // }
   }
 }
 
@@ -114,7 +122,6 @@ function changeRound() {
   }
 }
 
-
 function updateRoundInfo() {
   roundInfo.textContent = "Round: " + round;
 }
@@ -127,6 +134,8 @@ function compareWinners() {
     } else {
       alert("It's a tie. No one wins the game.Restart the game ");
     }
+    effect.classList.remove('hidden')
+
   }
 }
 
@@ -145,5 +154,6 @@ function startAgain() {
   currentPlayer = player1;
   updateRoundInfo();
   rollDiceButton.disabled = false;
+  effect.classList.add('hidden')
 
 }

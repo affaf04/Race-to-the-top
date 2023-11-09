@@ -12,29 +12,47 @@ class Player {
     this.player = player;
     this.position = position;
     this.startingPosition = position;
-    this.wins = 0; 
+    this.wins = 0;
   }
 
   movePlayer(steps) {
     this.position += steps;
-    this.player.style.bottom = this.position * 70 + "px";
+    this.player.style.bottom = this.position * 60 + "px";
 
-    if (this.position === 9) {
-      this.wins++; 
-      alert(this.player.id + " wins the round");
-      this.player.style.bottom = '0px';
-      changeRound();
-      updateRoundInfo();
-       return;
-    } else if (this.position > 9) {
-      alert(this.player.id + " loses the round");
+    if (this.position >= 9) {
+      this.position = this.startingPosition;
       this.player.style.bottom = "0px";
+
+      if (this === player1) {
+        alert("Player 1 loses the round");
+      } else if (this === player2) {
+        alert("Player 2 loses the round");
+      } 
       changeRound();
       updateRoundInfo();
-      return;
+    }
+    if (this.position === 9) {
+      if (this === player1) {
+        alert("Player 1 wins the round");
+        player1Win++;
+        changeRound();
+        updateRoundInfo();
+      } else if (this === player2) {
+        alert("Player 2 wins the round");
+        player2Win++;
+        changeRound();
+        updateRoundInfo();
+      }
+
+      // changeRound();
+      // updateRoundInfo();
     }
 
-    if (round === 3) {
+    if (player1Win >= 2) {
+      alert("Player 1 wins the game");
+    } else if (player2Win >= 2) {
+      alert("Player 2 wins the game");
+    } else if (round === 3) {
       compareWinners();
     } else {
       switchPlayer();
@@ -51,26 +69,35 @@ let round = 1;
 let currentPlayer = player1;
 
 function rollDice() {
-  let steps = Math.floor(Math.random() * 6) + 1;
-  // if (steps === 4) {
-  //   return 5;
-  // } else if ( steps === 6){
-  //   return 3;
-  // }
-  info.textContent = "Dice rolled: " + steps;
-  currentPlayer.movePlayer(steps);
-  if (steps === 1) {
-    diceImage.src = "resources/dice1.png";
-  } else if (steps === 2) {
-    diceImage.src = "resources/dice2.png";
-  } else if (steps === 3) {
-    diceImage.src = "resources/dice3.png";
-  } else if (steps === 4) {
-    diceImage.src = "resources/dice4.png";
-  } else if (steps === 5) {
-    diceImage.src = "resources/dice5.png";
-  } else if (steps === 6) {
-    diceImage.src = "resources/dice6.png";
+  if (round <= 3) {
+    let steps = Math.floor(Math.random() * 6) + 1;
+    info.textContent = "Dice rolled: " + steps;
+    // console.log("Current player:", currentPlayer);
+    // console.log("Player 1 Wins:", player1Win);
+    // console.log("Player 2 Wins:", player2Win);
+    
+    currentPlayer.movePlayer(steps);
+    
+    if (steps === 1) {
+      diceImage.src = "resources/dice1.png";
+    } else if (steps === 2) {
+      diceImage.src = "resources/dice2.png";
+    } else if (steps === 3) {
+      diceImage.src = "resources/dice3.png";
+    } else if (steps === 4) {
+      diceImage.src = "resources/dice4.png";
+    } else if (steps === 5) {
+      diceImage.src = "resources/dice5.png";
+    } else if (steps === 6) {
+      diceImage.src = "resources/dice6.png";
+      
+    }
+    
+
+    if (round >= 3) {
+      compareWinners();
+      rollDiceButton.disabled = true;
+    }
   }
 }
 
@@ -84,20 +111,27 @@ function switchPlayer() {
 
 function changeRound() {
   round++;
+  console.log("Round changed to", round);
+  updateRoundInfo();
+
 }
+
 function updateRoundInfo() {
   roundInfo.textContent = "Round: " + round;
 }
-
 function compareWinners() {
-  if (player1Win > player2Win) {
-    alert("Player 1 wins the game");
-  } else {
-    alert("Player 2 wins the game");
+  if (round >= 3) {
+    if (player1.wins > player2.wins) {
+      alert("Player 1 wins the game");
+    } else if (player1.wins < player2.wins) {
+      alert("Player 2 wins the game");
+    } else {
+      alert("It's a tie. No one wins the game.Restart the game ");
+    }
   }
 }
 
-// Add event listeners
+
 rollDiceButton.addEventListener("click", rollDice);
 restartButton.addEventListener("click", startAgain);
 
@@ -106,9 +140,9 @@ function startAgain() {
   player2.position = 0;
   player1.player.style.bottom = "0px";
   player2.player.style.bottom = "0px";
-  info.textContent = "Game Info: Round 1, Player 1's Turn";
   player1Win = 0;
   player2Win = 0;
+  round = 1;
   currentPlayer = player1;
   updateRoundInfo();
 }

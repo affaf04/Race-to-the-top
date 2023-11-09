@@ -51,16 +51,16 @@ class Player {
   
   }
 }
-
-
-
 const player1 = new Player(p1, 0);
 const player2 = new Player(p2, 0);
 let startingPosition = 0;
-// let player1Win = 0;
-// let player2Win = 0;
+let player1Win = 0;
+let player2Win = 0;
 let round = 1;
 let currentPlayer = player1;
+
+
+
 
 function rollDice() {
   if (round <= 3) {

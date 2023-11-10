@@ -14,7 +14,7 @@ h1{
     width: 900px;
     height: 800px;
     position: relative;
-    border: solid rgb(180, 92, 63);
+    border: solid 10px rgb(180, 92, 63);
     background-color: rgb(253, 242, 232);
     background-image: url(805542910.jpg);
     object-fit: cover;
@@ -30,7 +30,7 @@ h1{
     top: o;
     right: 0;
     bottom: 0; 
-    background-image: url(https://o.remove.bg/downloads/0f5f91ec-3c28-49b3-8c83-ce0d5a773cec/Untitled_design__14_-removebg-preview.png); 
+    background-image: url(Untitled_design__14_-removebg-preview.png); 
     background-size: 600px;
     background-repeat: no-repeat;
     z-index: 1;
@@ -74,13 +74,15 @@ h1{
 }
 
 .roll, .restart {
-    height: 50px;
-    width: 160px;
+    height: 60px;
+    width: 170px;
     font-size: 21px;
     text-align: center;
-    border: solid red;
+    color: black;
+    border: solid #ff0000;
+    background-color:rgb(231, 234, 230);
     font-family: monospace;
-    border-radius: 30%;
+    border-radius: 25%;
     display: inline;
     margin-left: 20px;
 }
@@ -112,5 +114,9 @@ h1{
   }
   
   .roll:hover {
-    background-color: #2980b9; 
+    background-color: rgb(245, 225, 10); 
   } 
+  .restart:hover {
+    background-color: #43b929; 
+
+  }

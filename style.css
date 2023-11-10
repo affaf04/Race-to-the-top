@@ -111,3 +111,6 @@ h1{
     display: none;
   }
   
+  .roll:hover {
+    background-color: #2980b9; 
+  } 

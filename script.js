@@ -30,8 +30,8 @@ class Player {
       }
       player1.player.style.bottom = "0px";
       player2.player.style.bottom = "0px";
-      player1.player.position = 0;
-      player2.player.position = 0;
+      player1.position = 0;
+      player2.position = 0;
       updateRoundInfo();
       changeRound();
       
@@ -39,12 +39,12 @@ class Player {
       if (this === player1) {
         alert("Player 1 loses the round");
         player1.player.style.bottom = "0px";
-        player1.player.position = 0;
+        player1.position = 0;
 
       } else if (this === player2) {
         alert("Player 2 loses the round");
         player2.player.style.bottom = "0px";
-        player2.player.position = 0;
+        player2.position = 0;
 
       }
   
@@ -110,8 +110,8 @@ function changeRound() {
   } else {
     round++;
     currentPlayer = player1; 
-    player1.player.position = 0;
-    player2.player.position = 0;
+    player1.position = 0;
+    player2.position = 0;
     player1.player.style.bottom = "0px";
     player2.player.style.bottom = "0px";
     updateRoundInfo();
@@ -140,8 +140,8 @@ rollDiceButton.addEventListener("click", rollDice);
 restartButton.addEventListener("click", startAgain);
 
 function startAgain() {
-  player1.player.position = 0;
-  player2.player.position = 0;
+  player1.position = 0;
+  player2.position = 0;
   player1.player.style.bottom = "0px";
   player2.player.style.bottom = "0px";
   player1Win = 0;

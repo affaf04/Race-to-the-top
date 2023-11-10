@@ -106,8 +106,8 @@ function changeRound() {
     currentPlayer = player1; 
     player1.position = 0;
     player2.position = 0;
-    player1.player.style.bottom = "0px";
-    player2.player.style.bottom = "0px";
+    player1.style.bottom = "0px";
+    player2.style.bottom = "0px";
     updateRoundInfo();
   }
 }

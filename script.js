@@ -8,7 +8,6 @@ const info = document.querySelector(".info");
 const roundInfo = document.querySelector(".round-info");
 const effect = document.getElementById('celebration-effect');
 
-
 class Player {
   constructor(player, position) {
     this.player = player;
@@ -18,9 +17,9 @@ class Player {
   }
   movePlayer(steps) {
     this.position += steps;
-    this.player.style.bottom = this.position * 69 + "px";
+    this.player.style.bottom = this.position * 68 + "px";
   
-    if (this.position >= 9) {
+    if (this.position === 9) {
       this.position = 9;
       if (this === player1) {
         alert("Player 1 wins the round");
@@ -35,7 +34,6 @@ class Player {
       changeRound();
       
     } else if (this.position > 9) {
-
       if (this === player1) {
         alert("Player 1 loses the round");
         player1.player.style.bottom = "0px";
@@ -43,6 +41,7 @@ class Player {
         alert("Player 2 loses the round");
         player2.player.style.bottom = "0px";
       }
+  
       changeRound();
       updateRoundInfo();
     }

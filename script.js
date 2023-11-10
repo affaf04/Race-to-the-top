@@ -36,10 +36,10 @@ class Player {
     } else if (this.position > 9) {
       if (this === player1) {
         alert("Player 1 loses the round");
-        player1.player.style.bottom = "0px";
+        player1.style.bottom = "0px";
       } else if (this === player2) {
         alert("Player 2 loses the round");
-        player2.player.style.bottom = "0px";
+        player2.style.bottom = "0px";
       }
   
       changeRound();

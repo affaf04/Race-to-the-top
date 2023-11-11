@@ -7,6 +7,7 @@ const restartButton = document.querySelector(".restart");
 const info = document.querySelector(".info");
 const roundInfo = document.querySelector(".round-info");
 const effect = document.getElementById('celebration-effect');
+const nightButton = document.querySelector('.night');
 
 class Player {
   constructor(player, position) {
@@ -138,7 +139,10 @@ function compareWinners() {
 
 rollDiceButton.addEventListener("click", rollDice);
 restartButton.addEventListener("click", startAgain);
+nightButton.addEventListener("click" ,nightMode );
+function nightMode (){
 
+}
 function startAgain() {
   player1.position = 0;
   player2.position = 0;

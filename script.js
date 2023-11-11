@@ -8,6 +8,7 @@ const info = document.querySelector(".info");
 const roundInfo = document.querySelector(".round-info");
 const effect = document.getElementById('celebration-effect');
 const nightButton = document.querySelector('.night');
+const gameboard = document.querySelector('.gameboard');
 
 class Player {
   constructor(player, position) {
@@ -139,8 +140,13 @@ function compareWinners() {
 
 rollDiceButton.addEventListener("click", rollDice);
 restartButton.addEventListener("click", startAgain);
-nightButton.addEventListener("click" ,nightMode );
+nightButton.addEventListener("click" , nightMode );
 function nightMode (){
+gameboard.style.backgroundImage = "url(nSbwlug.png)";
+gameboard.style.width= "900px";
+gameboard.style.height= "800px";
+gameboard.style.objectFit= "cover";
+gameboard.style.backgroundPosition=" center";
 
 }
 function startAgain() {

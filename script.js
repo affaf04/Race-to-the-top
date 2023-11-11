@@ -145,10 +145,10 @@ function nightMode (){
 gameboard.style.backgroundImage = "url(nSbwlug.png)";
 gameboard.style.width= "900px";
 gameboard.style.height= "800px";
-gameboard.style.objectFit= "cover";
+gameboard.style.backgroundSize= "cover";
 gameboard.style.backgroundPosition=" center";
-
 }
+
 function startAgain() {
   player1.position = 0;
   player2.position = 0;

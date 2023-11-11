@@ -142,11 +142,10 @@ rollDiceButton.addEventListener("click", rollDice);
 restartButton.addEventListener("click", startAgain);
 nightButton.addEventListener("click" , nightMode );
 function nightMode (){
-gameboard.style.backgroundImage = "url(nSbwlug.png)";
-gameboard.style.width= "900px";
-gameboard.style.height= "800px";
-gameboard.style.backgroundSize= "cover";
+gameboard.style.backgroundImage = "url('./nSbwIug.png')";
 gameboard.style.backgroundPosition=" center";
+p1.style.backgroundImage = "url('./dc579ec67c0126bdeba1eb5fd2a3ae00_2048x-removebg-preview.png')"
+p2.style.backgroundImage="url('./c17a2df6847f5f169148038502568706-removebg-preview.png')"
 }
 
 function startAgain() {

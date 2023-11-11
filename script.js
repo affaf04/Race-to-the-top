@@ -146,6 +146,9 @@ gameboard.style.backgroundImage = "url('./nSbwIug.png')";
 gameboard.style.backgroundPosition=" center";
 p1.style.backgroundImage = "url('./dc579ec67c0126bdeba1eb5fd2a3ae00_2048x-removebg-preview.png')"
 p2.style.backgroundImage="url('./c17a2df6847f5f169148038502568706-removebg-preview.png')"
+
+alert ("Sorry we don't play at night .Try in the morning")
+
 }
 
 function startAgain() {

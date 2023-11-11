@@ -5,8 +5,11 @@
 h1{
     font-family: monospace;
     font-size: 25px;
+    border: solid 5px rgb(180, 92, 63); 
     color: forestgreen;
     text-align: left;
+    margin-left: 370px;
+    margin-right: 800px;
 }
 
 .gameboard {
@@ -121,6 +124,6 @@ h1{
   }
   .night{
     font-family: monospace;
-    font-size: 25px;
-    color: forestgreen;
+    font-size: 20px;
+    color: rgb(45, 34, 139);
   }

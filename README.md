@@ -7,6 +7,8 @@ The game continues for 3 rounds, and the player with the most round wins at the 
 
 
 Screenshots
+![Screenshot 2023-11-12 193341](https://github.com/affaf04/Race-to-the-top/assets/141270222/40ceef61-3d27-4df7-bd2d-ad122a99cc4b)
+![Screenshot 2023-11-12 193341](https://github.com/affaf04/Race-to-the-top/assets/141270222/48976b79-f48b-4b95-ab1b-e2ebc4b6b53e)
 
 Tech/framework used
 - JavaScript
